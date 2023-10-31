@@ -1,0 +1,5 @@
+package com.deeptech.hibernate.work.utility;
+
+public class HibernateUtil {
+
+}

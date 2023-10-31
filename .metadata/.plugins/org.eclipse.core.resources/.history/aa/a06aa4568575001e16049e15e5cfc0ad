@@ -1,0 +1,33 @@
+package com.deeptech.hibernate.work;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.deeptech.hibernate.work.dto.Student;
+import com.deeptech.hibernate.work.utility.HibernateUtil;
+
+public class DeleteStudent {
+
+    public static void main(String[] args) {
+        SessionFactory sf = HibernateUtil.connection();
+        Session ses = sf.openSession();
+        ses.beginTransaction();
+
+        // Load the student you want to delete using load()
+        Student studentToDelete = ses.load(Student.class, 2); // Assuming you want to delete a student with ID 6
+
+        if (studentToDelete != null) {
+            // Delete the student
+            ses.delete(studentToDelete);
+
+            // Commit the transaction
+            ses.getTransaction().commit();
+            System.out.println("Student deleted successfully.");
+        } else {
+            System.out.println("Student not found.");
+        }
+
+        ses.close();
+        sf.close();
+    }
+}

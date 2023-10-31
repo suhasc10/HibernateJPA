@@ -1,0 +1,5 @@
+package com.deeptech.hibernate.work.dto;
+
+public class Employee {
+
+}

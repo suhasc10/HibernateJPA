@@ -1,0 +1,38 @@
+package com.deeptech.hibernate.work;
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.deeptech.hibernate.work.dto.Student;
+import com.deeptech.hibernate.work.utility.HibernateUtil;
+
+public class CreateStudent {
+
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.setStudentName("Suhas");
+        s.setRollNumber(10);
+        s.setCourse("BE");
+        
+        // Create a session factory and open a session
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session ses = sf.openSession();
+        
+        // Begin a transaction
+        Transaction transaction = ses.beginTransaction();
+        
+        // Save the Student object to the database
+        ses.save(s);
+        
+        // Commit the transaction
+        transaction.commit();
+        
+        // Close the session
+        ses.close();
+        
+        System.out.println("Insert Record Success");
+    }
+}

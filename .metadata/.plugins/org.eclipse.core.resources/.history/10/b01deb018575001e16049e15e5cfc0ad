@@ -1,0 +1,11 @@
+package com.deeptech.hibernate.work;
+
+public class DeleteStudent {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

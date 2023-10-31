@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Auto-update the database schema -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- Define the database dialect for MySQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        
+        <!-- Define database connection properties -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatecrud</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">1221</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!-- Mapping resource for your entity (replace with your actual mapping file) -->
+        <mapping resource="com/deeptech/hibernate/work/dto/Student.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

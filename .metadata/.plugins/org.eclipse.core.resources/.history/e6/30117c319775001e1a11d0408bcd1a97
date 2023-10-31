@@ -1,0 +1,5 @@
+package com.deeptech.hibernate.work;
+
+public class ReadEmployee {
+
+}

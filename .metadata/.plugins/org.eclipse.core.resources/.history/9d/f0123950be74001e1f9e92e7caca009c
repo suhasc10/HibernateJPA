@@ -1,0 +1,20 @@
+package com.deeptech.hibernate.work.utility;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateUtil 
+{
+	SessionFactory a;
+	private static SessionFactory sessionfactory;
+	
+	static
+	{
+		sessionfactory = new Configuration().configure().buildSessionFactory();
+	}
+	public SessionFactory getSessionFactory()
+	{
+		return a;
+	}
+
+}
